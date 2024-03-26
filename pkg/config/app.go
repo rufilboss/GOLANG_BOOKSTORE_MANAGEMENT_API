@@ -7,17 +7,17 @@ import (
 )
 
 var (
-	db * gorm.DB
+	db *gorm.DB
 )
 
-func Connect(){
-	d, err := gorm.Open("mysql", "akhil:Axlesharma@12@/simplerest?")
-	if err != nil{
+func Connect() {
+	d, err := gorm.Open("mysql", "akhil:Axlesharma@12@/simplerest?charset=utf8&parseTime=True&loc=Local")
+	if err != nil {
 		panic(err)
 	}
 	db = d
 }
 
-func GetDB(){
-	
+func GetDB() *gorm.DB {
+	return db
 }
