@@ -53,7 +53,7 @@ func DeleteBook(w http.ResponseWriter, r *http.Request){
     if err != nil {
         fmt.Println("error parsing book")
     }
-    b := models.DeleteBook(ID)
+    book := models.DeleteBook(ID)
     res, _ := json.Marshal(book)
 	w.Header().Set("Content-Type", "pkglication/json")
     w.WriteHeader(http.StatusOK)
@@ -79,4 +79,9 @@ func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	if updateBook.Publication != "" {
         bookDetails.Publication = updateBook.Publication
     }
+	db.Save(&bookDetails)
+	res, _ := json.Marshal(bookDetails)
+	w.Header().Set("Content-Type", "pkglication/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
 }
