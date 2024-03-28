@@ -12,7 +12,7 @@ import (
 	"github.com/akhil/go-bookstore/pkg/utils"
 )
 
-var NewBook = models.Book
+var NewBook models.Book
 
 func GetBook(w http.ResponseWriter, r *http.Request) {
 	newBooks := models.GetAllBooks()
@@ -29,7 +29,7 @@ func GetBookById(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println("error parsing book")
 	}
-	bookDetails, _ := models.GetBookById
+	bookDetails, _ := models.GetBookById(ID)
 	res, _ := json.Marshal(bookDetails)
 	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusOK)
