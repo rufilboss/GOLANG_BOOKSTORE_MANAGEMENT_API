@@ -2,9 +2,8 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
-	// "github.com/akhil/go-bookstore/pkg/config"
 
-	"rufilboss/crud_api/GOLANG_BOOKSTORE_MANAGEMENT_API/pkg/config"
+	"github.com/akhil/go-bookstore/pkg/config"
 )
 
 var db *gorm.DB
@@ -40,7 +39,7 @@ func GetBookById(Id int64) (*Book, *gorm.DB) {
 	return &getBook, db
 }
 
-func DeleteBook(ID int64) Book{
+func DeleteBook(ID int64) Book {
 	var book Book
 	db.Where("ID=?", ID).Delete(book)
 	return book

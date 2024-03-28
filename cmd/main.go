@@ -4,11 +4,12 @@ import (
 	"log"
 	"net/http"
 
-	// "github.com/akhil.go-bookstore/pkg/routes"
+	// "rufilboss/crud_api/GOLANG_BOOKSTORE_MANAGEMENT_API/pkg/routes"
+
 	"github.com/gorilla/mux"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 
-	"rufilboss/crud_api/GOLANG_BOOKSTORE_MANAGEMENT_API/pkg/routes"
+	"github.com/akhil/go-bookstore/pkg/routes"
 )
 
 func main() {
